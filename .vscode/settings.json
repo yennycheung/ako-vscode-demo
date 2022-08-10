@@ -5,5 +5,6 @@
   "azureFunctions.projectRuntime": "~3",
   "debug.internalConsoleOptions": "neverOpen",
   "azureFunctions.preDeployTask": "npm prune (functions)",
-  "rapidapi.requests.timeout": 10000
+  "rapidapi.requests.timeout": 1200000,
+  "rapidapi.terminalLink.enabled": true
 }

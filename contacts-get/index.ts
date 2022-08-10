@@ -1,5 +1,6 @@
 import { AzureFunction, Context, HttpRequest } from "@azure/functions"
 import { faker } from '@faker-js/faker';
+import { secretApiKey } from "../constants/secret";
 import { Cache } from "../utils/cache";
 
 // http://localhost:7071/api/contacts

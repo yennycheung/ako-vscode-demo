@@ -8,7 +8,7 @@
       "methods": [
         "get"
       ],
-      "route": "contacts/{id}"
+      "route": "attractions/{id}"
     },
     {
       "type": "http",
@@ -16,5 +16,5 @@
       "name": "res"
     }
   ],
-  "scriptFile": "../dist/contacts-single-get/index.js"
+  "scriptFile": "../dist/attractions-single-get/index.js"
 }

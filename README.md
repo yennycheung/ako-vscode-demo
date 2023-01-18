@@ -1,6 +1,6 @@
 # Azure Functions - HTTP Trigger Samples
 
-A sample Azure Functions - API project to retrieve and create contacts.
+A sample Azure Functions - API project to retrieve and create tourist attractions for Marrakech.
 
 ## Installation
 
@@ -16,7 +16,6 @@ brew install azure-functions-core-tools@4
 brew link --overwrite azure-functions-core-tools@4
 ```
 
-- Clone this repository: `git clone https://github.com/estruyf/azurefunctions-contacts-sample`
 - Install the dependencies: `npm i`
 - Run the sample: `npm start`
 
@@ -31,11 +30,11 @@ Once you completed the above steps, you can run the projects as follows:
 
 ## Available APIs for you to test
 
-- `GET http://localhost:7071/api/contacts`: returns a list of contacts
-- `POST http://localhost:7071/api/contacts`: creates a new contact
-- `GET http://localhost:7071/api/contacts/{id}`: returns a contact by id
+- `GET http://localhost:7071/api/attractions`: returns a list of attractions
+- `POST http://localhost:7071/api/attractions`: creates a new attraction
+- `GET http://localhost:7071/api/attractions/{id}`: returns a attraction by id
 
-### POST contact example
+### POST attraction example
 
 The body of the POST example show have the following structure:
 

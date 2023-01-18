@@ -1,27 +1,27 @@
 import { AzureFunction, Context, HttpRequest } from "@azure/functions"
 import { Cache } from "../utils/cache";
 
-// http://localhost:7071/api/contacts
+// http://localhost:7071/api/attractions
 const httpTrigger: AzureFunction = async function (context: Context, req: HttpRequest): Promise<void> {
-  context.log('Retrieving all contacts');
+  context.log('Retrieving all attractions');
 
-  const contactId = context.bindingData.id;
+  const attractionId = context.bindingData.id;
   
-  const contacts: any[] = Cache.get('contacts') || [];
+  const attractions: any[] = Cache.get('attractions') || [];
 
-  const contact = contacts.find(c => c.id === contactId);
+  const attraction = attractions.find(c => c.id === attractionId);
 
-  if (!contact) {
+  if (!attraction) {
     context.res = {
       status: 404,
-      body: `Contact with id ${contactId} not found`
+      body: `Attraction with id ${attractionId} not found`
     };
     return;
   }
 
   context.res = {
     // status: 200, /* Defaults to 200 */
-    body: contact,
+    body: attraction,
     headers: {
       'Content-Type': 'application/json'
     }

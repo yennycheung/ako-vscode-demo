@@ -17,38 +17,38 @@ const httpTrigger: AzureFunction = async function (context: Context, req: HttpRe
   //   return;
   // }
   
-  var attractions: any[] = Cache.get('attractions') || [];
+  const attractions: any[] = Cache.get('attractions') || [];
 
   const topMarrakechAttractions = [
     {
-      "id": 1,
       "name": "Medina Souks",
       "description": "The narrow alleyways are a kaleidoscope of colors, scents, and sounds and are bound to be the sightseeing highlight of your trip.",
     },
     {
-      "id": 2,
       "name": "Djemaa El Fna",
       "description": "The Djemaa El Fna (assembly place of the nobodies) is a vibrant hub of bric-a-brac stalls, musicians, storytellers, fortune-tellers, and snake charmers.",
     },
     {
-      "id": 3,
       "name": "Koutoubia Mosque",
       "description": "The Koutoubia Mosque is Marrakesh's most famous landmark with its striking, 70-meter-tall minaret visible for miles in every direction.",
     },
     {
-      "id": 4,
       "name": "Majorelle Gardens",
       "description": "Originally from the town of Nancy in France, Majorelle came to Marrakesh for health reasons and became well known for his paintings of local Moroccan life.",
     },
     {
-      "id": 5,
       "name": "Medersa Ben Youssef",
       "description": "The sumptuously decorated Medersa of Ben Youssef is one of the finest examples of Saadian era artistry in Morocco.",
     },
   ];
 
   for (let i = attractions.length; i < total; i++) {
-    attractions.push(topMarrakechAttractions[i]);
+    const attraction = {
+      id: i+1, 
+      name: topMarrakechAttractions[i].name,
+      description: topMarrakechAttractions[i].description,
+    }
+    attractions.push(attraction);
   }
 
   // for (let i = contacts.length; i < total; i++) {
@@ -68,7 +68,7 @@ const httpTrigger: AzureFunction = async function (context: Context, req: HttpRe
     
   //   contacts.push(contact);
   // }
-
+  Cache.set(`attractions`, attractions);
 
   context.res = {
     // status: 200, /* Defaults to 200 */

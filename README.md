@@ -40,17 +40,9 @@ The body of the POST example show have the following structure:
 
 ```json
 {
-  "firstName": "Elmira",
-  "lastName": "Labadie",
-  "email": "Felicia4@hotmail.com",
-  "phone": "242-797-5156 x6780",
-  "address": {
-    "street": "510 Heaney Drive",
-    "city": "North Valentinaborough",
-    "state": "Wyoming",
-    "zip": "32522-3610"
-  }
+  "name": "Hotel Spa",
+  "description": "The perfect place for us to rewind."
 }
 ```
 
-> **Important**: the `firstName`, `lastName`, `email` fields are required.
+> **Important**: the `name`, `description` fields are required.
